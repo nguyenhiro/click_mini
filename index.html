@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>选择正确的颜色!</title>
+    <title>Chọn màu đúng!</title>
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -66,39 +66,39 @@
 </head>
 <body>
 
-    <h1>🎯 在10秒内选对颜色！</h1>
-    <div id="level">级别: 1</div>
-    <div id="timer">时间: 10s</div>
-    <div>要选择的颜色:</div>
-    <div id="targetColor">红色</div>
+    <h1>🎯 Chọn đúng màu trong 10 giây!</h1>
+    <div id="level">Cấp độ: 1</div>
+    <div id="timer">Thời gian: 10s</div>
+    <div>Màu cần chọn:</div>
+    <div id="targetColor">Đỏ</div>
     <div id="board"></div>
     <div id="message"></div>
-    <button id="startBtn">开始游戏</button>
+    <button id="startBtn">Bắt đầu trò chơi</button>
 
     <script>
         // Bản đồ ánh xạ tên màu tiếng Trung với mã màu hợp lệ (Hex hoặc tên tiếng Anh)
         // Đã thêm nhiều màu hơn để tăng độ đa dạng
         const colorMap = {
-            '红色': '#FF0000',      // Đỏ
-            '绿色': '#008000',      // Xanh lá cây
-            '蓝色': '#0000FF',      // Xanh dương
-            '橙色': '#FFA500',      // Cam
-            '紫色': '#800080',      // Tím
-            '粉色': '#FFC0CB',      // Hồng
-            '黄色': '#FFFF00',      // Vàng
-            '青色': '#00FFFF',      // Xanh lam/Cyan
-            '棕色': '#A52A2A',      // Nâu
-            '灰色': '#808080',      // Xám
-            '黑色': '#000000',      // Đen
-            '白色': '#FFFFFF',      // Trắng
-            '金色': '#FFD700',      // Vàng kim
-            '银色': '#C0C0C0',      // Bạc
-            '深蓝': '#00008B',      // Xanh đậm
-            '深绿': '#006400',      // Xanh lá đậm
-            '洋红': '#FF00FF',      // Magenta
-            '薄荷绿': '#98FF98',    // Mint Green
-            '琥珀色': '#FFBF00',    // Amber
-            '石灰绿': '#32CD32'     // Lime Green
+            '红色': '#FF0000',        // Đỏ
+            '绿色': '#008000',        // Xanh lá cây
+            '蓝色': '#0000FF',        // Xanh dương
+            '橙色': '#FFA500',        // Cam
+            '紫色': '#800080',        // Tím
+            '粉色': '#FFC0CB',        // Hồng
+            '黄色': '#FFFF00',        // Vàng
+            '青色': '#00FFFF',        // Xanh lam/Cyan
+            '棕色': '#A52A2A',        // Nâu
+            '灰色': '#808080',        // Xám
+            '黑色': '#000000',        // Đen
+            '白色': '#FFFFFF',        // Trắng
+            '金色': '#FFD700',        // Vàng kim
+            '银色': '#C0C0C0',        // Bạc
+            '深蓝': '#00008B',        // Xanh đậm
+            '深绿': '#006400',        // Xanh lá đậm
+            '洋红': '#FF00FF',        // Magenta
+            '薄荷绿': '#98FF98',      // Xanh bạc hà
+            '琥珀色': '#FFBF00',      // Hổ phách
+            '石灰绿': '#32CD32'       // Xanh chanh
         };
 
         // Lấy danh sách tên màu tiếng Trung từ colorMap để dùng trong trò chơi
@@ -137,7 +137,7 @@
 
         function startLevel() {
             if (currentLevel >= levelSettings.length) {
-                message.textContent = '🎉 恭喜，你已经完成了所有级别！';
+                message.textContent = '🎉 Chúc mừng, bạn đã hoàn thành tất cả các cấp độ!';
                 startBtn.style.display = 'none';
                 return;
             }
@@ -151,7 +151,7 @@
             correctColorName = colors[Math.floor(Math.random() * colors.length)];
             
             targetColorDisplay.textContent = correctColorName; 
-            levelDisplay.textContent = `级别: ${currentLevel + 1}`;
+            levelDisplay.textContent = `Cấp độ: ${currentLevel + 1}`;
             timeLeft = level.time;
             correctButtons = 0;
 
@@ -176,10 +176,10 @@
                 }
                 // Nếu không thể tìm màu sai khác, có thể thêm màu sai trùng nếu cần lấp đầy
                 else if (!allColorNames.includes(wrongColorName)) { // Tránh lặp lại quá nhiều cùng 1 màu sai
-                     allColorNames.push(wrongColorName);
+                    allColorNames.push(wrongColorName);
                 }
-                 // Đảm bảo không bị mắc kẹt nếu số lượng màu trong colorMap ít hơn total
-                 if (Object.keys(colorMap).length < total) {
+                // Đảm bảo không bị mắc kẹt nếu số lượng màu trong colorMap ít hơn total
+                if (Object.keys(colorMap).length < total) {
                     // Nếu không đủ màu độc đáo, chấp nhận lặp lại màu sai
                     while (allColorNames.length < total) {
                         allColorNames.push(colors[Math.floor(Math.random() * colors.length)]);
@@ -229,18 +229,18 @@
 
         function gameOver(success) {
             if (success) {
-                message.textContent = '✅ 恭喜你成功通过下一关！';
+                message.textContent = '✅ Chúc mừng bạn đã vượt qua cấp độ tiếp theo!';
                 message.style.color = 'green';
                 currentLevel++;
             } else {
-                message.textContent = '❌ 错误或时间到，按F5重新开始！';
+                message.textContent = '❌ Sai hoặc hết thời gian, nhấn F5 để chơi lại!';
                 message.style.color = 'red';
             }
             startBtn.style.display = 'inline-block';
         }
 
         function updateTimer() {
-            timerDisplay.textContent = `时间: ${timeLeft}s`;
+            timerDisplay.textContent = `Thời gian: ${timeLeft}s`;
         }
     </script>
 
