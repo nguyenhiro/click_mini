@@ -76,32 +76,32 @@
     <button id="startBtn">Bắt đầu trò chơi</button>
 
     <script>
-        // Bản đồ ánh xạ tên màu tiếng Trung với mã màu hợp lệ (Hex hoặc tên tiếng Anh)
+        // Bản đồ ánh xạ tên màu tiếng Việt với mã màu hợp lệ (Hex hoặc tên tiếng Anh)
         // Đã thêm nhiều màu hơn để tăng độ đa dạng
         const colorMap = {
-            '红色': '#FF0000',        // Đỏ
-            '绿色': '#008000',        // Xanh lá cây
-            '蓝色': '#0000FF',        // Xanh dương
-            '橙色': '#FFA500',        // Cam
-            '紫色': '#800080',        // Tím
-            '粉色': '#FFC0CB',        // Hồng
-            '黄色': '#FFFF00',        // Vàng
-            '青色': '#00FFFF',        // Xanh lam/Cyan
-            '棕色': '#A52A2A',        // Nâu
-            '灰色': '#808080',        // Xám
-            '黑色': '#000000',        // Đen
-            '白色': '#FFFFFF',        // Trắng
-            '金色': '#FFD700',        // Vàng kim
-            '银色': '#C0C0C0',        // Bạc
-            '深蓝': '#00008B',        // Xanh đậm
-            '深绿': '#006400',        // Xanh lá đậm
-            '洋红': '#FF00FF',        // Magenta
-            '薄荷绿': '#98FF98',      // Xanh bạc hà
-            '琥珀色': '#FFBF00',      // Hổ phách
-            '石灰绿': '#32CD32'       // Xanh chanh
+            'Đỏ': '#FF0000',
+            'Xanh lá cây': '#008000',
+            'Xanh dương': '#0000FF',
+            'Cam': '#FFA500',
+            'Tím': '#800080',
+            'Hồng': '#FFC0CB',
+            'Vàng': '#FFFF00',
+            'Xanh lam': '#00FFFF', // Cyan
+            'Nâu': '#A52A2A',
+            'Xám': '#808080',
+            'Đen': '#000000',
+            'Trắng': '#FFFFFF',
+            'Vàng kim': '#FFD700',
+            'Bạc': '#C0C0C0',
+            'Xanh đậm': '#00008B', // Dark blue
+            'Xanh lá đậm': '#006400', // Dark green
+            'Hồng tươi': '#FF00FF', // Magenta
+            'Xanh bạc hà': '#98FF98', // Mint Green
+            'Hổ phách': '#FFBF00', // Amber
+            'Xanh chanh': '#32CD32' // Lime Green
         };
 
-        // Lấy danh sách tên màu tiếng Trung từ colorMap để dùng trong trò chơi
+        // Lấy danh sách tên màu tiếng Việt từ colorMap để dùng trong trò chơi
         const colors = Object.keys(colorMap); 
 
         // Cấu hình cấp độ: Tăng số lượng nút (count) và giảm thời gian (time)
